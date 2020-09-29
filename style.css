@@ -3,9 +3,11 @@ header{
     display:flex;
     justify-content: space-between;
     margin:15px;
-
 }
 
+.introduction{
+    text-align: center;
+}
 
 .container{
     clear:both;
@@ -15,11 +17,8 @@ header{
     width: 100%;
 }
 
-#introduction{
-    text-align: center;
-}
-#button{
-    background:rgb(89, 133, 23);
+.button{
+    background:hotpink ;
     color:white;
     font-weight: 800;
     margin:5px;
@@ -27,12 +26,11 @@ header{
     border-radius: .5rem;
     cursor: pointer;
 }
-#button:hover{
-    background-color: rgb(127, 190, 33);
+
+.button:hover{
+    background-color: rgb(240, 147, 193);
 }
-.question{
-    display:none;
-}
+
 li{
     background-color: rgb(240, 147, 193);
     color:black;
@@ -44,5 +42,20 @@ li{
 li:hover{
     background-color: hotpink;
 
+}
+/* This is used to style the message (right or wrong) when choices are clicked*/
+.right, .wrong{
+    font-style: italic
+}
+
+a{
+    color: hotpink;
+    font-weight: bold;
+    text-decoration: none;
+    margin:15px;
+}
+
+.timer{
+    margin:15px;
 }
 

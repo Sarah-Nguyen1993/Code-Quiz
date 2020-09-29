@@ -5,67 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Code Quiz</title>
+    <title>Coding Quiz</title>
 </head>
 
 <body>
+    <header>
+        <a href="highScore.html"> View Highscore</a>
+        <p> Timer: <span id="timer">0</span></p>
+    </header>
 
-    <div class="question" id="question1">
-        <h3>The condition in an if/else statement is enclosed within ______ .</h3>
-        <ol id="choices">
-            <li class="right"> quotes</li>
-            <li class="wrong"> curly brackets</li>
-            <li class="wrong"> parentheseses</li>
-            <li class="wrong"> square brackets</li>
-        </ol>
+    <div class="container">
+        <div id="question-container">
+            <h3 id="question"></h3>
+            <ol>
+                <li class="choices" id="choice1"></li>
+                <li class="choices" id="choice2"></li>
+                <li class="choices" id="choice3"></li>
+                <li class="choices" id="choice4"></li>
+            </ol>
+        </div>
         <hr>
+        <div id="message"></div>
     </div>
 
-    <div class="question" id="question2">
-        <h3>Arrays in JavaScript can be used to store ______ .</h3>
-        <ol id="choices">
-            <li class="wrong"> numbers and strings</li>
-            <li class="wrong"> other arrays</li>
-            <li class="wrong"> booleans</li>
-            <li class="right"> all of the above</li>
-        </ol>
-        <hr>
+    <div class="end-result">
     </div>
 
-    <div class="question" id="question3">
-        <h3>String values must be enclosed within ______ when being assigned to varibales.</h3>
-        <ol id="choices">
-            <li class="wrong"> commas</li>
-            <li class="wrong"> curly brackets</li>
-            <li class="right"> quotes</li>
-            <li class="wrong"> square brackets</li>
-        </ol>
-        <hr>
-    </div>
-
-    <div class="question" id="question4">
-        <h3> A very useful tool used during development and debugging for printing content to the debugger is:</h3>
-        <ol id="choices">
-            <li class="wrong"> JavaScript</li>
-            <li class="wrong"> terminal/bash</li>
-            <li class="wrong"> for loops</li>
-            <li class="right"> console.log</li>
-        </ol>
-        <hr>
-    </div>
-
-    <div class="question" id="question5">
-        <h3> Commonly used data types DO NOT include:</h3>
-        <ol class="choices">
-            <li class="wrong"> strings</li>
-            <li class="wrong"> booleans</li>
-            <li class="right"> alerts</li>
-            <li class="right"> numbers</li>
-        </ol>
-        <hr>
-    </div>
-    </div>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 

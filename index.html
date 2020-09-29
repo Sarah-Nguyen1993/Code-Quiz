@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +8,21 @@
 
     <title>Coding Quiz</title>
 </head>
+
 <body>
     <header>
-        <a  href="#"> View Highscore</a>
-        <p> Timer: <span id="timer">0</span></p>
+        <a href="highScore.html"> View Highscore</a>
+        <p class="timer"> Timer: <span id="timer">0</span></p>
     </header>
     <div class="container">
-        <div id= "introduction">
+        <div class="introduction">
             <h1> Coding Quiz Challenge</h1>
             <p> Try to answer the following code-related questions within the time limit.
                 Keep in mind that incorrect answers will penalize your scoretime by ten seconds!</p>
-            <a src="./quiz.html"></a><button id ="button"> Start Quiz</button></a
+            <!--When the Start Quiz button is clicked, it takes the user to quiz.html-->
+            <a href="quiz.html"><button class="button">Start Quiz</button></a>
         </div>
     </div>
-    <script src="script.js"></script>
 </body>
+
 </html>
