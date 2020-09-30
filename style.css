@@ -58,4 +58,16 @@ a{
 .timer{
     margin:15px;
 }
+/* this is for the initial input box when the quiz ends*/
+#initial{
+    margin:5px;
+}
+/* this is for highscore page*/
+.high-scores{
+    background-color: pink;
+    color:white;
+}
+#high-score-list{
+    background-color: pink;
+}
 

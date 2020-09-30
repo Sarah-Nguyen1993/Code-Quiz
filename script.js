@@ -6,7 +6,7 @@ questionBank = [
         choice2: "curly brackets",
         choice3: "parentheseses",
         choice4: "square brackets",
-        answer: "quotes"
+        answer: "parentheseses"
     },
     {
         question: "Arrays in JavaScript can be used to store ______ .",
@@ -54,8 +54,8 @@ $(document).ready(function () {
     quizStart();
     function quizStart() {
         timerInterval = setInterval(function () {
+             total--;
             countDown.textContent = total + " seconds";
-            total--;
             //if the timer reaches 0, execute the function endQuiz
             if (total <= 0) {
                 total = 0;
@@ -84,16 +84,16 @@ $(document).ready(function () {
         var message =  $("#message");
         var choiceClicked = questionBank[currentQuestion][response]
         if (choiceClicked === questionBank[currentQuestion].answer) {
-           message.html("<p class='right'>Right!</p>");
-        } else {
-            message.html("<p class='wrong'>Wrong!</p>");
-            total -= 10;
-            countDown.textContent = total + " seconds";
-        }
-        message.html ="";
+            message.html("<p class='right'>Right!</p>");
+        } 
+        else {
+             message.html("<p class='wrong'>Wrong!</p>");
+             total -= 10;
+             countDown.textContent = total + " seconds";
+        }  
+
         currentQuestion++;
         
-       
         if (currentQuestion === questionBank.length) {
             endQuiz();
         }
@@ -109,20 +109,34 @@ $(document).ready(function () {
         if (total<=0){
             total = 0;
             countDown.textContent = total;
+            var endResultDiv =  $(".container").html("<div class = 'end-result'></div>");    
+            var h3El = endResultDiv.append("<h3>All Done!</h3>");
+            var score = endResultDiv.append("<p>Your final score is: " + total + "</p>");
+            var initialForm = endResultDiv.append("<div class ='initial-form'></div>");
+            $(".initial-form").append("<label>Enter your initial:</label>");
+            $(".initial-form").append("<input id ='initial'></input>");
+            var submitBtn = $(".initial-form").append("<button class = 'button' id='submit'>Submit</button>")
+                
+            $(submitBtn).on("click",'button',function(){
+                var initial = $("#initial").val();
+                var user ={ 
+                    name: initial,
+                    score: total
+                }
+                var highScores = localStorage.getItem("highScores");
+                if (highScores === null){
+                    highScores = [];
+                }
+                else{
+                    highScores = JSON.parse(highScores);
+                }
+                highScores.push(user)
+                localStorage.setItem("highScores",JSON.stringify(highScores));
+                //go to the highscore page
+                window.location.replace('highscore.html')
+            })
         }
-        
-        $(".container").html("<div class = 'end-result'></div>");
-        $(".end-result").append("<h3>All Done!</h3>");
-        $(".end-result").append("<p>Your final score is: " + total + "</p>");
-        $(".end-result").append("<div class ='initial-form'></div>");
-        $(".initial-form").append("<label>Enter your initial:</label>");
-        $(".initial-form").append("<input id ='initial'></input>");
-        $(".initial-form").append("<a href='highScore.html' id ='link'></a>");
-        $("#link").append("<button class = 'button' id='submit'>Submit</button>")
     }
-    $("#submit").click(function () {
-        return window.location.assign('highscore.html')
-    })
 })
 
 
