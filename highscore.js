@@ -2,6 +2,7 @@
 var goBack = $("#go-back")
 var clear= $("#clear")
 var highScores = JSON.parse(localStorage.getItem("highScores"))
+//print out highscores from the local storage
 if (highScores !== null){
     for (var i = 0; i <highScores.length; i++){
         var liEl = document.createElement("li");
@@ -11,7 +12,6 @@ if (highScores !== null){
         
     }
 }
-
 //event listener to go back to the main page
 goBack.click(function(){
     window.location.replace("index.html")

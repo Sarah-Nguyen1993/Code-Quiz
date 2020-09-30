@@ -47,7 +47,7 @@ var choices = document.querySelector("#choices");
 var countDown = document.querySelector("#timer");
 var timeInterval;
 var currentQuestion = 0;
-var total = 40;
+var total = 75;
 
 $(document).ready(function () {
     //start the quiz here
@@ -108,6 +108,7 @@ $(document).ready(function () {
         clearInterval(timerInterval);
         if (total<=0){
             total = 0;
+        }
             countDown.textContent = total;
             var endResultDiv =  $(".container").html("<div class = 'end-result'></div>");    
             var h3El = endResultDiv.append("<h3>All Done!</h3>");
@@ -135,7 +136,7 @@ $(document).ready(function () {
                 //go to the highscore page
                 window.location.replace('highscore.html')
             })
-        }
+        
     }
 })
 
