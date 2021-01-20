@@ -8,7 +8,7 @@ if (highScores !== null){
         var liEl = document.createElement("li");
         liEl.textContent = highScores[i].name + ": " + highScores[i].score;
         liEl.setAttribute("id", "high-score-list")
-        $("#high-scores").append(liEl)
+        $("#high-scores").prepend(liEl)
         
     }
 }
