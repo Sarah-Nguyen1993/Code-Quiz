@@ -44,8 +44,15 @@ li:hover{
 
 }
 /* This is used to style the message (right or wrong) when choices are clicked*/
-.right, .wrong{
-    font-style: italic
+.right {
+    font-style: italic;
+    color: green;
+}
+
+.wrong {
+    font-style: italic;
+    color: red;
+
 }
 
 a{
