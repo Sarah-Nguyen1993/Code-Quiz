@@ -111,15 +111,27 @@ $(document).ready(function () {
         }
             countDown.textContent = total;
             var endResultDiv =  $(".container").html("<div class = 'end-result'></div>");    
-            var h3El = endResultDiv.append("<h3>All Done!</h3>");
-            var score = endResultDiv.append("<p>Your final score is: " + total + "</p>");
-            var initialForm = endResultDiv.append("<div class ='initial-form'></div>");
-            $(".initial-form").append("<label>Enter your initial:</label>");
-            $(".initial-form").append("<input id ='initial'></input>");
-            var submitBtn = $(".initial-form").append("<button class = 'button' id='submit'>Submit</button>")
+           
+            endResultDiv.append(
+                "<h3>All Done!</h3>",
+                "<p>Your final score is: " + total + "</p>",
+                "<form id = 'score-submit'></form>",
+                "<p id = 'hiden' class='wrong'>Please enter your inital</p>"
+            );
                 
-            $(submitBtn).on("click",'button',function(){
+            $("#score-submit").append(
+                "<label>Enter your initial:</label>", 
+                "<input id ='initial'></input>",
+                "<button class ='button'>Submit</button>"
+            );
+                
+            $("#score-submit").submit(function(event){
+                event.preventDefault();
                 var initial = $("#initial").val();
+                if (initial === ""){
+                    $("#hiden").css("display", "block")
+                    return;
+                }
                 var user ={ 
                     name: initial,
                     score: total
