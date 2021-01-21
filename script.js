@@ -47,7 +47,7 @@ var choices = document.querySelector("#choices");
 var countDown = document.querySelector("#timer");
 var timeInterval;
 var currentQuestion = 0;
-var total = 75;
+var total = 50;
 
 $(document).ready(function () {
     //start the quiz here
