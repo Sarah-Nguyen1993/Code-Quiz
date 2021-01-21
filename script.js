@@ -85,9 +85,16 @@ $(document).ready(function () {
         var choiceClicked = questionBank[currentQuestion][response]
         if (choiceClicked === questionBank[currentQuestion].answer) {
             message.html("<p class='right'>Right!</p>");
+            message.fadeIn('fast', function(){
+                message.delay(100).fadeOut();
+            })
+           
         } 
         else {
              message.html("<p class='wrong'>Wrong!</p>");
+             message.fadeIn('fast', function(){
+                message.delay(100).fadeOut();
+            })
              total -= 10;
              countDown.textContent = total + " seconds";
         }  
@@ -116,7 +123,7 @@ $(document).ready(function () {
                 "<h3>All Done!</h3>",
                 "<p>Your final score is: " + total + "</p>",
                 "<form id = 'score-submit'></form>",
-                "<p id = 'hiden' class='wrong'>Please enter your inital</p>"
+                "<p class='hidden wrong'>Please enter your inital</p>"
             );
                 
             $("#score-submit").append(
@@ -129,7 +136,7 @@ $(document).ready(function () {
                 event.preventDefault();
                 var initial = $("#initial").val();
                 if (initial === ""){
-                    $("#hiden").css("display", "block")
+                    $(".hidden").css("display", "block")
                     return;
                 }
                 var user ={ 
