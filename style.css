@@ -55,6 +55,9 @@ li:hover{
 
 }
 
+.hidden {
+    display:none;
+}
 a{
     color: hotpink;
     font-weight: bold;
